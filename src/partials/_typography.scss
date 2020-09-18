@@ -1,0 +1,23 @@
+html {
+    font-family: $primary-font;
+    font-size: 62.5%;
+  }
+
+h1 {
+    font-family: $primary-font;
+    font-size: 4rem;
+    color: $white;
+    letter-spacing: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 3rem;
+    font-family: $secondary-font;
+    color: $red;
+  }
+  
+  h3 {
+    font-size: 2rem;
+    font-family: $fancy-font;
+    color: $white;
+  }
