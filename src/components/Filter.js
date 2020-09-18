@@ -12,7 +12,7 @@ class Filter extends Component {
 
   }
 
-  callDates = () => {
+  callDates(e) {
       console.log('this is called')
     // NbaApiCall.main().then((res) => {
     //   console.log(res)
@@ -27,7 +27,8 @@ class Filter extends Component {
           <h2>Choose your team or player</h2>
           <div className="filterChoices">
               <h1>Team:</h1>
-              <button onClick={this.callDates()}>click here</button>
+              
+              <button onClick={this.callDates}>click here</button>
           </div>
       </div>
     )
