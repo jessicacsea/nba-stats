@@ -10,6 +10,7 @@ class Player extends Component {
     }
   }
   
+  
   render() {
     return (
       <div id="playerSection">

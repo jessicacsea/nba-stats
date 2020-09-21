@@ -124,6 +124,19 @@ class App extends Component {
     })
   }
 
+  getPlayerHeadshots(lastName, firstName) {
+    NbaCalls.getPlayerHeadshot(lastName, firstName).then((res) =>{
+      if(!res){
+        return ''
+      } else {
+        console.log(res, 'photo result')
+        this.setState({
+          playerHeadshot: res.data
+        })
+      }
+    })
+  }
+
   render () {
 
     return (
