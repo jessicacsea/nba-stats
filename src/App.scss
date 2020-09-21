@@ -2,13 +2,16 @@
 @import "./partials/_utils.scss";
 @import "./partials/_typography.scss";
 @import "./partials/_header.scss";
+@import "./partials/_mainSection.scss";
+@import "./partials/_filterSection.scss";
+@import "./partials/_playerSection.scss";
 
 * {
     margin: 0;
     padding: 0;
 }
 body { 
-    background-color: lightgrey;
+    background-color: $white;
     margin: 10px;
 }
 
@@ -16,5 +19,5 @@ body {
     max-width: 1440px;
     width: 90%;
     margin: 0 auto;
-  }
+}
 

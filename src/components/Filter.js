@@ -1,39 +1,76 @@
 import React, { Component } from 'react';
-// import NbaApiCall from '../api/nbacom_collect_dates';
-// import NbaApiPlayersCall from '../api/nbacom_collect_player';
 
 class Filter extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-        teams: [],
-        player: '',
+        player1Search: '',
+        player2Search: '',
+        error: '',
+        button: true
     }
 
+    this.sendPlayers = this.sendPlayers.bind(this);
+    this.selectPlayers = this.selectPlayers.bind(this);
+    this.handlePlayer2Change = this.handlePlayer2Change.bind(this);
+    this.handlePlayer1Change = this.handlePlayer1Change.bind(this);
   }
 
-  callDates(e) {
-      console.log('this is called')
-    // NbaApiCall.main().then((res) => {
-    //   console.log(res)
-    // })
-    // console.log(NbaApiCall)
+  selectPlayers(e){
+    e.preventDefault();
+    if(/\s/.test(this.state.player1Search) && /\s/.test(this.state.player2Search)){
+      this.sendPlayers(this.state.player1Search, this.state.player2Search);
+      this.setState({
+        error: ''
+      })
+    } else {
+      this.setState({
+        error: 'Please enter both players first and last names.'
+      })
+    }
   }
 
-  
+  sendPlayers(player1, player2) {
+    this.props.getPlayer1Info(player1);
+    this.props.getPlayer2Info(player2);
+  }
+
+  handlePlayer1Change(e) {
+    this.setState({
+      player1Search: e.target.value
+    })
+  }
+  handlePlayer2Change(e) {
+    e.preventDefault();
+    this.setState({
+      player2Search: e.target.value
+    })
+  }
+
   render() {
     return (
-      <div className="filterComp">
-          <h2>Choose your team or player</h2>
+      <div id="filterComp">
+          <h2>Compare your favourite players' 2019 Season Averages</h2>
+          <h2>{this.state.error}</h2>
           <div className="filterChoices">
-              <h1>Team:</h1>
-              
-              <button onClick={this.callDates}>click here</button>
+              <div className="player1Filter">
+                <h1>Player One</h1>
+                <form>
+                  <label for="playerSelectOne">Enter the player's first and last name:</label>
+                  <input type="text" name="playerSelectOne" onChange={this.handlePlayer1Change}></input>
+                </form>
+              </div>
+              <div className="player2Filter">
+                <h1>Player Two</h1>
+                <form>
+                  <label for="playerSelectTwo">Enter the player's first and last name:</label>
+                  <input type="text" name="playerSelectTwo" onChange={this.handlePlayer2Change}></input>
+                </form>
+              </div>
           </div>
+            <button onClick={this.selectPlayers}>Let's Go!</button>
       </div>
     )
   }
 }
-
-
 export default Filter;

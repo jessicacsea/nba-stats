@@ -1,23 +1,34 @@
 html {
-    font-family: $primary-font;
-    font-size: 62.5%;
-  }
+  font-size: 62.5%;
+}
+body {
+  font-family: $primary-font;
+}
 
 h1 {
-    font-family: $primary-font;
     font-size: 4rem;
     color: $white;
-    letter-spacing: 0.5rem;
   }
   
   h2 {
     font-size: 3rem;
-    font-family: $secondary-font;
     color: $red;
   }
   
   h3 {
     font-size: 2rem;
-    font-family: $fancy-font;
     color: $white;
+  }
+
+  h4 {
+    font-size: 2rem;
+  }
+  
+  .playerName {
+    color: $red;
+  }
+
+  label {
+    font-size: 2rem;
+    color: black;
   }

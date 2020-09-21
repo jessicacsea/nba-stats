@@ -1,0 +1,21 @@
+#playerSection {
+    margin: 2rem 0;
+    // padding: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#playerSection h2 {
+    margin-left: 4rem;
+    font-family: $primary-font;
+    font-size: 4rem;
+}
+
+.playerProfile {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    border: black 5px solid;
+    border-radius: 10px;
+    margin: 0 2.5rem;
+    padding: 5rem;
+}
