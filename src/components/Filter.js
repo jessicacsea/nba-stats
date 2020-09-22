@@ -31,8 +31,11 @@ class Filter extends Component {
   }
 
   sendPlayers(player1, player2) {
-    this.props.getPlayer1Info(player1);
-    this.props.getPlayer2Info(player2);
+    Promise.all([
+      this.props.getPlayer1Info(player1),
+    ]).then(
+      this.props.getPlayer2Info(player2)
+    )
   }
 
   handlePlayer1Change(e) {
